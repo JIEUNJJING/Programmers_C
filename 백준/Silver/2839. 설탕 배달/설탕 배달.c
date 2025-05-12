@@ -1,23 +1,24 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
 int main() {
-    int n;
-    scanf("%d", &n);
+	
+	int N = 0, r = 0, cnt = 0;
+	scanf("%d", &N);
+	r = N;
+	while (r >= 0) {
+		if (r % 5 == 0) {
+			cnt += r / 5;
+			r -= 5 * (r / 5);
+			printf("%d", cnt);
 
-    int cnt = 0;
-    int r = n;
+			return 0;
+		}
+		r -= 3;
+		cnt++;
+	}
 
-    while (r >= 0) {
-        if (r % 5 == 0) {
-            cnt += r / 5;
-            printf("%d\n", cnt);
-            return 0;
-        } else {
-            r -= 3;
-            cnt++;
-        }
-    }
-
-    printf("-1\n");
-    return 0;
+	printf("-1");
+	return 0;
 }
